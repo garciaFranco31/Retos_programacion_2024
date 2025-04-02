@@ -114,7 +114,7 @@ dic = {
     "Edad": 23,
     "Deporte":"Natacion"
 }
-print(dic)
+print(dic) #{'Nombre': 'Franco', 'Edad': 23, 'Deporte': 'Natacion'}
 
 d2 = dict([
       ('Nombre', 'Sara'),
@@ -127,3 +127,93 @@ d3 = dict(Nombre='Sara',
           Documento=1003882
 )
 
+# Acceder y modificar
+
+print(dic['Nombre']) #Franco
+print(dic.get("Nombre")) #Franco
+
+dic["Nombre"] = "Ander" #{'Nombre': Ander', 'Edad': 23, 'Deporte': 'Natacion'}
+
+dic['Direccion'] = "Calle 57" # En caso de que la key no exista, se agrega automaticamente.
+
+#{'Nombre': Ander', 'Edad': 23, 'Deporte': 'Natacion', 'Direccion':'Calle 57'}
+
+#Iteracion
+
+for elem in dic:
+    print(elem)
+#Imprime los key del diccionario
+#Nombre
+#Edad
+#Deporte
+
+for elem in dic:
+    print(dic[elem])
+#Imprime los values:
+#Franco
+#23
+#Natacion
+
+for key,value in dic.items():
+    print(key, value)
+
+#Imprime el key y su value:
+#Nombre Franco
+#Edad 23
+#Deporte Natacion
+
+#Un diccionario puede contener uno o mas diccionarios en su interior.
+anidado1 = {"a": 1, "b": 2}
+anidado2 = {"a": 1, "b": 2}
+d = {
+  "anidado1" : anidado1,
+  "anidado2" : anidado2
+}
+print(d)
+#{'anidado1': {'a': 1, 'b': 2}, 'anidado2': {'a': 1, 'b': 2}}
+
+d.clear() #elimina todos los elementos del diccionario
+
+#Con el metodo get podemos consultar el value para un determinado key, podemos agregar un 2do parametro (no obligatorio) el cual sera devuelto en caso de que el valor no exista.
+d = {'a': 1, 'b': 2}
+print(d.get('a')) #1
+print(d.get('z', 'No encontrado')) #No encontrado
+
+#El metodo items devuelve una lista con los key y los values del diccionario. Si se convierte en un list, puede ser indexada como una lista normal.
+d = {'a': 1, 'b': 2}
+it = d.items()
+print(it)             #dict_items([('a', 1), ('b', 2)])
+print(list(it))       #[('a', 1), ('b', 2)]
+print(list(it)[0][0]) #a
+
+#El metodo keys devuelve una lista con los key del diccionario
+d = {'a': 1, 'b': 2}
+k = d.keys()
+print(k)       #dict_keys(['a', 'b'])
+print(list(k)) #['a', 'b']
+
+#El metodo values devuelve una lista con los value del diccionario
+d = {'a': 1, 'b': 2}
+print(list(d.values())) #[1, 2]
+
+#El metodo pop busca y elimina el key pasado como parametro y devuelve su valor asociado.
+
+dict = {'Nombre':'Franco', 'Edad':23}
+dict.pop('Edad')
+print(dict)
+
+# el 2do parametro sera devuelto en caso de que no exista el key buscado.
+dict.pop('Calle', 'No existe')
+print(dict)
+
+#popitem() elimina de forma aleatoria un elemento del diccionario
+dict1 = {'Nombre':'Ander', 'Edad':23}
+dict.popitem()
+
+#el metodo update() es llamado sobre un diccionario y contiene como entrada otro diccionario. Sirve para actualizar los value. Si alguna key del diccionario no está, es añadida
+
+dict2 = {'Nombre':'Bardo', 'Edad':2}
+print(dict2) #{'Nombre': 'Bardo', 'Edad': 2}
+dict3 = {'Nombre':'Zelda', 'Color':'Gris', 'Especie':'Gato'}
+dict2.update(dict3)
+print(dict2) #{'Nombre': 'Zelda', 'Edad': 2, 'Color': 'Gris', 'Especie': 'Gato'}

@@ -1,5 +1,5 @@
-tupla2 = (1,2,('a','b'),3,4)
-#print(tupla2[2][1])
-
-for elem in tupla2:
-    print(elem)
+dict2 = {'Nombre':'Bardo', 'Edad':2}
+print(dict2)
+dict3 = {'Nombre':'Zelda', 'Color':'Gris', 'Especie':'Gato'}
+dict2.update(dict3)
+print(dict2)
