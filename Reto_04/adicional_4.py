@@ -18,3 +18,4 @@ def esPalindromo(word1):
 s = "Oso"
 print(esPalindromo(s))
 
+ 
