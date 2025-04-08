@@ -6,7 +6,7 @@
     echo "# Creando el README" >> README.md
     git init
     git add README.md
-    git commit -m "haciendo cambios"
+    git commit -m "un comentario sobre lo subido"
     git branch -M main
     git remote add origin [URL-Repo]
     git push -u origin main
